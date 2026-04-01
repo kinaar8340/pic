@@ -10,6 +10,15 @@
 
 **Current date context: April 1, 2026**
 
+**Email: kinaar0@protonmail.com**
+**X: @kinaar8340**
+
+```
+Please consider donating or buy me a coffee. 
+Solana Public Address:
+5jhqGtLcK9nxUU66L1KkJ88pbHE4KCG8y9mVVBipgDFa
+```
+
 ## Abstract
 
 Modern AI agents remain fundamentally stateless. PIC solves the AI persistent memory problem by **shifting from local state vectors to global topological features** (winding numbers, linking phases, braiding phases, zero-point ShellCube radial differential). The architecture leverages **quaternion math and helical/Clifford geometry** to create a mathematically rigorous, drift-resistant conduit.
@@ -54,43 +63,21 @@ The zero-point ShellCube radial differential + RingConeChain braiding is the sin
 ```bash
 pip install -r requirements.txt
 ```
-
-### Run the Agent (default = RubikCone + ShellCube)
+### Run the Agent once to create first checkpoint then,
+```bash
+python scripts/agent_demo.py
+```
+### run again but include --no-reset to keep memory.
 ```bash
 python scripts/agent_demo.py --no-reset
 ```
-### Quick Test & Diagnostics
-```bash
-python scripts/pic_test.py --strong-train --bake-steps 500 --no-viz
-```
-### Experimental VQC mode
-```bash
-python scripts/pic_test.py --strong-train --bake-steps 500 --no-viz --vqc
-```
-```bash
-First launch performs deep topological bake. Subsequent launches are instant.
-```
-### Facts Management
-- `public_facts.txt` → public facts (pol 0/1)
-- `private_facts.txt` → sensitive facts (protected pol 2)
-- New declarative statements from chat are automatically baked with forking + ShellCube alignment
-
 ### Clearing PIC's Memory & Chat History
 ```bash
 rm -f checkpoints/pic_conduit_final.pt
 rm -f chat_history.json
 rm -rf snapshots/braided_lattice/*
 ```
-### # Then launch fresh without --no-reset — this forces full bake from public_facts.txt + private_facts.txt
-```bash
-python scripts/agent_demo.py
-```
-
-### Snapshot System
-Click **📸 Take Identity Snapshot Fingerprint** in the UI:
-- Generates topological hash (winding + braiding_phase + ShellCube norm)
-- Saves braided lattice + JSON stats
-- Verifiable identity token for multi-agent use
+### That's it have fun, do good things!
 
 ## Key Features (v10.2)
 
