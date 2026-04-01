@@ -4,11 +4,11 @@
 ![License](https://img.shields.io/badge/License-MIT-green)
 ![Status](https://img.shields.io/badge/Status-Production--Ready-brightgreen)
 
+![PIC Banner](banner.png)
+
 **Geometric, helical memory architecture for robust, drift-resistant persistent identity in AI agents**
 
 **Current date context: April 1, 2026**
-
-![PIC Banner](banner.png)
 
 ## Abstract
 
