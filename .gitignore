@@ -34,3 +34,23 @@ lake-manifest.json
 # Temporary
 temp_*.*
 *.log
+
+# Remaining untracked files (never commit)
+PIC_WindingInvariants.lean
+lakefile.lean
+lean-toolchain
+main.py
+models/
+scripts/facts.txt
+scripts/pic_test.py
+scripts/pretrain_bud.py
+scripts/test_facts.txt
+scripts/privat_facts.txt
+src/multi_conduit.py
+src/solana_trading_bot.py
+src/tet24_music.py
+src/tet24_music_player.py
+test_nemotron.py
+vqc_sims_public/
+alameda_elliott_smith.txt
+music_stp_SevenCagedTiger.txt
