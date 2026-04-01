@@ -1,0 +1,63 @@
+# configs/default.yaml — Balanced v2026-03 (recommended starting point)
+# Global topological features (winding, linking, braiding phases + toroidal Clifford skin)
+# now drive persistence. Quaternion math + helical/Clifford geometry solve the AI
+# persistent memory problem. Referenced: vqc_sims_public, OpenGauss, math.inc/opengauss.
+# safe_cosine(dim=-1 + .unsqueeze(0)) pattern enforced everywhere.
+
+model:
+  quat_logical_dim: 96
+  twist_rate: 12.5          # slightly denser turns — helps separation
+  max_depth: 56.0           # a bit more room
+
+training:
+  kernel_sigma: 0.32        # wider default kernel — better prefix tolerance
+  read_bandwidth_factor: 2.4
+  learning_rate: 0.00035    # slightly faster but still safe
+  grad_clip_max_norm: 1.0
+
+  # ── Local fidelity ── (dominant)
+  recon_weight: 5200.0      # strong — exact match priority
+  align_weight: 1200.0      # cosine push — lower than before
+  mag_weight: 80.0
+
+  # ── Topology / smoothness ── (gentle guidance only)
+  topo_weight: 4.0          # was 25 — much lower
+  winding_weight: 48.0
+  locality_weight: 12.0
+  braiding_weight: 18.0
+
+  # ── Orthogonality & preservation ──
+  ortho_weight: 5.0         # much lower — or make conditional in code
+  cos_pres_weight: 60.0     # moderate — helps prefix but doesn't dominate
+  twist_enc_weight: 1.5
+  l2_weight: 5e-5           # lighter — trust recon more
+
+  # Strongly recommended addition (if your conduit supports it)
+  depth_pull_weight: 3200.0 # ← most important fix for s-stability
+
+data:
+  n_clusters: 8
+  norm_target: 0.95
+  depth_span_per_cluster: 9.0
+  intra_cluster_noise: 0.20
+  drift_strength: 0.018
+
+# ──────────────────────────────────────────────────────────────
+# Credential Etcher (v9.9) — Hybrid: global topology primary + JSON fallback
+# Configuration-over-hardcoding. Key paths, pol_idx, s_start now live here.
+# Primary etch uses Clifford Torus skin + braiding_phase (invariant by construction).
+# JSON is encrypted local-vector redundancy (market-friendly short-term memory).
+# ──────────────────────────────────────────────────────────────
+credentials:
+  # Symmetric key (never committed — generated once)
+  fernet_key_path: "credentials/fernet.key"
+
+  # Encrypted fallback file (local state vector for third-party apps)
+  json_fallback_path: "credentials/user_intake_fallback.json"
+
+  # Topological bake defaults (pol 2 = private fork)
+  default_pol_idx: 2
+  default_s_start: 12.0     # starts deep enough for credential stability
+
+  # Optional: future per-app defaults
+  # webapp_default_s_offset: 4.8

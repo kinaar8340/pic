@@ -1,0 +1,2 @@
+# PIC v10.2 — Public Facts
+# One fact per line. These will be automatically loaded into the Persistent Identity Conduit.

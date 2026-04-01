@@ -1,0 +1,36 @@
+# PIC v10.2 .gitignore — Privacy-first + topological lock
+
+# Personal / runtime identity files (never commit)
+identity_structure.json
+chat_history.json
+credentials/fernet.key
+credentials/user_intake_fallback.json
+
+# Generated / large files
+checkpoints/
+outputs/
+snapshots/
+*.mp4
+*.wav
+*.mid
+*.png
+
+# Python / env
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# IDE
+.idea/
+
+# Lean4 build junk
+.lake/
+lake-manifest.json
+*.olean
+*.olean.trace
+
+# Temporary
+temp_*.*
+*.log
