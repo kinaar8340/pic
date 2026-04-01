@@ -1,8 +1,14 @@
 # Persistent Identity Conduit (PIC) v10.2
 
+![Python](https://img.shields.io/badge/Python-3.10%2B-blue)
+![License](https://img.shields.io/badge/License-MIT-green)
+![Status](https://img.shields.io/badge/Status-Production--Ready-brightgreen)
+
 **Geometric, helical memory architecture for robust, drift-resistant persistent identity in AI agents**
 
-**Current date context: March 30, 2026**
+**Current date context: April 1, 2026**
+
+![PIC Banner](banner.png)
 
 ## Abstract
 
