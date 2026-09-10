@@ -1,7 +1,7 @@
 # Persistent Identity Conduit (PIC) v10.2
 
 ![Python](https://img.shields.io/badge/Python-3.10%2B-blue)
-![License](https://img.shields.io/badge/License-MIT-green)
+![License](https://img.shields.io/badge/License-PolyForm--Noncommercial--1.0.0-blue)
 ![Status](https://img.shields.io/badge/Status-Production--Ready-brightgreen)
 
 ![PIC Banner](banner.png)
@@ -115,7 +115,9 @@ rm -rf snapshots/braided_lattice/*
 
 ## License
 
-MIT
+**[PolyForm Noncommercial License 1.0.0](LICENSE)**. See [`PATENTS.md`](PATENTS.md) and [`IP_NOTICE.md`](IP_NOTICE.md).
+
+Commits previously published under the MIT License remain MIT for copyright. This version is PolyForm Noncommercial. U.S. Provisional Application 63/913,110 was never licensed. Commercial use requires a written license.
 
 ## Acknowledgments
 
